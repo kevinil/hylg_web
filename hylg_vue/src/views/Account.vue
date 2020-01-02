@@ -1,5 +1,8 @@
 <template>
-   <h1>111</h1>
+   <div class="main-cnt">
+      <h1>账号界面</h1>
+   </div>
+
 </template>
 
 <script>
