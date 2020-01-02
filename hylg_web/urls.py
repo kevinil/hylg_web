@@ -16,14 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
-from login import views
+from django.views.generic import TemplateView
+from hy_case import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index),
-    path('login/', views.login),
-    path('register/', views.register),
-    path('logout/', views.logout),
-    path('captcha/', include('captcha.urls')),   # 增加这一行
-    path('confirm/', views.user_confirm),
+    path('', include('hy_case.urls')),
+    # path('', TemplateView.as_view(template_name="index.html")),
+
+    # path('index/', views.index),
+    # path('login/', views.login),
+    # path('register/', views.register),
+    # path('logout/', views.logout),
+    # path('captcha/', include('captcha.urls')),   # 增加这一行
+    # path('confirm/', views.user_confirm),
 ]
+handler404 = views.page_not_found
+handler500 = views.page_error
