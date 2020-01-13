@@ -22,6 +22,8 @@ urlpatterns = [
 
     path('clue/', views.clue, name='clue'),
 
+    path('user/', views.user, name='user'),
+
     # request
 
     path('reportRequest/', views.reportRequest, name='reportRequest'),

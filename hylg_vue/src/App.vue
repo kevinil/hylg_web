@@ -70,6 +70,7 @@
         data() {
             return {
                 activeNav: "/index",
+                userName:"",
             }
         },
         mounted() {
@@ -79,36 +80,24 @@
             href = href.split('/')[3]
             _this.activeNav = '/' + href
         },
+        created() {
+            this.$axios.post('/user/', JSON.stringify({getData: "user"})).then(res => {
+                this.$root.USERNAME = res.data[0]
+                this.userName = res.data[0]
+                console(this.$root.USERNAME)
+                console(this.userName)
+            })
+
+
+        },
 
         methods: {
             handleSelect(key) {
                 switch (key) {
-                    // case "index":
-                    //     this.$router.push({path:'/index'});
-                    //     break;
-                    // case "case":
-                    //     this.$router.push({path:'/case'});
-                    //     break;
-                    // case "data":
-                    //     this.$router.push({path:'/data'});
-                    //     break;
-                    // case "report":
-                    //     this.$router.push({path:'/report'});
-                    //     break;
-                    // case "clue":
-                    //     this.$router.push({path:'/clue'});
-                    //     break;
                     case "/logout":
                         console.log("log out here")
                         // window.open('/logout')
                         window.location.href = '/logout';
-
-                        // this.$router.push({path:'/logout'});
-
-                        // this.$axios.post('/logout/', JSON.stringify({ usrname: "kevin"})).then(res => {
-                        //     console.log(res.data)
-                        // });
-                        // this.$router.push({path:'/logout'});
                         break;
                     default:
                         break;

@@ -193,102 +193,102 @@
                                 </el-form>
                             </div>
                         </el-tab-pane>
-                        <el-tab-pane>
-                            <span slot="label"><i class="el-icon-magic-stick"></i> 审核信息</span>
-                            <div>
-                                <el-card style="margin-bottom: 8px;" v-for="item in flyingClueTable" shadow="always"
-                                         :key="item.custName">
+<!--                        <el-tab-pane>-->
+<!--                            <span slot="label"><i class="el-icon-magic-stick"></i> 审核信息</span>-->
+<!--                            <div>-->
+<!--                                <el-card style="margin-bottom: 8px;" v-for="item in flyingClueTable" shadow="always"-->
+<!--                                         :key="item.custName">-->
 
-                                    <el-row style="margin-top: 8px;">
-                                        <el-col :span="5">
-                                            <span style="text-shadow:1px 1px 3px rgba(31,47,61,0.47);font-size:40px;font-weight: bold;color: #25344e;margin-left: 10px;">{{ item.custName }}</span>
-                                        </el-col>
-                                        <el-col :span="4">
-                                            <div style="float: left;height: 28px;margin-left: 4px;">
-                                                <span class="col-span">{{ item.date }}</span>
-                                            </div>
-                                            <div style="float: left;margin-left: 4px;">
-                                                <span class="col-span">{{ item.custType }}</span>
-                                            </div>
-                                        </el-col>
-                                        <el-col :span="6">
-                                        <el-rate
-                                                style="margin-top: 18px;"
-                                                :texts="rateArray"
-                                                show-text="true"
-                                                v-model="item.rateValue"
-                                                :colors="colors">
-                                        </el-rate>
-                                        </el-col>
-                                        <el-col :span="4" style="margin-left: -10px;">
-                                        <el-button :disabled="!item.rateValue" type="success" style="margin-top: 10px;">
-                                            完成审核
-                                        </el-button>
-                                        </el-col>
-                                        <el-col :span="4" style="margin-left: -10px;">
-                                        <el-button :disabled="item.rateValue" type="danger" style="margin-top: 10px;">
-                                            删除明显错误线索
-                                        </el-button>
-                                        </el-col>
-                                    </el-row>
-                                    <el-row style="margin-top: 16px;margin-left: 10px;">
-                                        <el-col :span="0.5" style="margin-top: 1px;">
-                                            <img src="../assets/bianhao.png" style="height: 20px;">
-                                        </el-col>
-                                        <el-col :span="4" style="margin-left: 8px;margin-top: 2px;">
-                                            <span>{{ item.custId }}</span>
-                                        </el-col>
+<!--                                    <el-row style="margin-top: 8px;">-->
+<!--                                        <el-col :span="5">-->
+<!--                                            <span style="text-shadow:1px 1px 3px rgba(31,47,61,0.47);font-size:40px;font-weight: bold;color: #25344e;margin-left: 10px;">{{ item.custName }}</span>-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="4">-->
+<!--                                            <div style="float: left;height: 28px;margin-left: 4px;">-->
+<!--                                                <span class="col-span">{{ item.date }}</span>-->
+<!--                                            </div>-->
+<!--                                            <div style="float: left;margin-left: 4px;">-->
+<!--                                                <span class="col-span">{{ item.custType }}</span>-->
+<!--                                            </div>-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="6">-->
+<!--                                        <el-rate-->
+<!--                                                style="margin-top: 18px;"-->
+<!--                                                :texts="rateArray"-->
+<!--                                                show-text="true"-->
+<!--                                                v-model="item.rateValue"-->
+<!--                                                :colors="colors">-->
+<!--                                        </el-rate>-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="4" style="margin-left: -10px;">-->
+<!--                                        <el-button :disabled="!item.rateValue" type="success" style="margin-top: 10px;">-->
+<!--                                            完成审核-->
+<!--                                        </el-button>-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="4" style="margin-left: -10px;">-->
+<!--                                        <el-button :disabled="item.rateValue" type="danger" style="margin-top: 10px;">-->
+<!--                                            删除明显错误线索-->
+<!--                                        </el-button>-->
+<!--                                        </el-col>-->
+<!--                                    </el-row>-->
+<!--                                    <el-row style="margin-top: 16px;margin-left: 10px;">-->
+<!--                                        <el-col :span="0.5" style="margin-top: 1px;">-->
+<!--                                            <img src="../assets/bianhao.png" style="height: 20px;">-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="4" style="margin-left: 8px;margin-top: 2px;">-->
+<!--                                            <span>{{ item.custId }}</span>-->
+<!--                                        </el-col>-->
 
-                                        <el-col :span="0.5" style="margin-top: 1px;">
-                                            <img src="../assets/location.png" style="height: 20px;">
-                                        </el-col>
-                                        <el-col :span="1.5" style="margin-left: 8px;">
-                                            <span>{{ item.region }}-</span>
-                                        </el-col>
-                                        <el-col :span="6.5" style="margin-left: 8px;">
-                                            <span>{{ item.addr }}-</span>
-                                        </el-col>
-                                        <el-col :span="5.5" style="margin-left: 8px;">
-                                            <span>{{ item.relateTip }}-</span>
-                                        </el-col>
-                                    </el-row>
-                                    <el-row style="margin-top: 8px;margin-left: 10px;">
-                                        <el-col :span="0.5" style="margin-top: 1px;">
-                                            <img src="../assets/qingsuan.png" style="height: 20px;">
-                                        </el-col>
-                                        <el-col :span="4" style="margin-left: 8px;">
-                                            <span>{{ item.caseAmount }}</span>
-                                        </el-col>
+<!--                                        <el-col :span="0.5" style="margin-top: 1px;">-->
+<!--                                            <img src="../assets/location.png" style="height: 20px;">-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="1.5" style="margin-left: 8px;">-->
+<!--                                            <span>{{ item.region }}-</span>-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="6.5" style="margin-left: 8px;">-->
+<!--                                            <span>{{ item.addr }}-</span>-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="5.5" style="margin-left: 8px;">-->
+<!--                                            <span>{{ item.relateTip }}-</span>-->
+<!--                                        </el-col>-->
+<!--                                    </el-row>-->
+<!--                                    <el-row style="margin-top: 8px;margin-left: 10px;">-->
+<!--                                        <el-col :span="0.5" style="margin-top: 1px;">-->
+<!--                                            <img src="../assets/qingsuan.png" style="height: 20px;">-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="4" style="margin-left: 8px;">-->
+<!--                                            <span>{{ item.caseAmount }}</span>-->
+<!--                                        </el-col>-->
 
-                                        <el-col :span="0.5" style="margin-top: 1px;">
-                                            <img src="../assets/car.png" style="height: 20px;">
-                                        </el-col>
-                                        <el-col :span="15" style="margin-left: 8px;">
-                                            <span>{{ item.caseCars }}</span>
-                                        </el-col>
-                                    </el-row>
-                                    <el-row style="margin-top: 8px;margin-left: 10px;">
-                                        <el-col :span="0.5" style="margin-top: 1px;">
-                                            <img src="../assets/falv.png" style="height: 20px;">
-                                        </el-col>
-                                        <el-col :span="2.5" style="margin-left: 8px;">
-                                            <span>{{ item.caseTypes.join(',') }}</span>
-                                        </el-col>
-                                    </el-row>
-                                    <el-row style="margin-top: 8px;margin-left: 12px;">
-                                        <el-col :span="0.5" style="margin-top: 3px;">
-                                            <img src="../assets/cluebeizhu.png" style="height: 16px;">
-                                        </el-col>
-                                        <el-col :span="2.5" style="margin-left: 10px;">
-                                            <span>{{ item.info }}</span>
-                                        </el-col>
-                                    </el-row>
-                                </el-card>
+<!--                                        <el-col :span="0.5" style="margin-top: 1px;">-->
+<!--                                            <img src="../assets/car.png" style="height: 20px;">-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="15" style="margin-left: 8px;">-->
+<!--                                            <span>{{ item.caseCars }}</span>-->
+<!--                                        </el-col>-->
+<!--                                    </el-row>-->
+<!--                                    <el-row style="margin-top: 8px;margin-left: 10px;">-->
+<!--                                        <el-col :span="0.5" style="margin-top: 1px;">-->
+<!--                                            <img src="../assets/falv.png" style="height: 20px;">-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="2.5" style="margin-left: 8px;">-->
+<!--                                            <span>{{ item.caseTypes.join(',') }}</span>-->
+<!--                                        </el-col>-->
+<!--                                    </el-row>-->
+<!--                                    <el-row style="margin-top: 8px;margin-left: 12px;">-->
+<!--                                        <el-col :span="0.5" style="margin-top: 3px;">-->
+<!--                                            <img src="../assets/cluebeizhu.png" style="height: 16px;">-->
+<!--                                        </el-col>-->
+<!--                                        <el-col :span="2.5" style="margin-left: 10px;">-->
+<!--                                            <span>{{ item.info }}</span>-->
+<!--                                        </el-col>-->
+<!--                                    </el-row>-->
+<!--                                </el-card>-->
 
 
-                            </div>
+<!--                            </div>-->
 
-                        </el-tab-pane>
+<!--                        </el-tab-pane>-->
 
                     </el-tabs>
 

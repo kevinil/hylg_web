@@ -79,9 +79,9 @@
                                 </el-table>
                             </div>
                         </el-tab-pane>
-                        <el-tab-pane label="其他查询">
-                            <p style="color:#999">需求分析中</p>
-                        </el-tab-pane>
+<!--                        <el-tab-pane label="其他查询">-->
+<!--                            <p style="color:#999">需求分析中</p>-->
+<!--                        </el-tab-pane>-->
                     </el-tabs>
                 </div>
 
@@ -115,25 +115,18 @@
 
                                 </div>
 
-                                <div style="margin-left: 20px;margin-right: 2px;">
-                                    <div>
-                                        <el-progress  style="margin-bottom: 12px;" :percentage="perClue" :format="formatClue"
-                                                     :color="colors"></el-progress>
-
-                                        <el-progress style="margin-bottom: 12px;" :percentage="perRelationship" :format="formatRelationship"
-                                                     :color="colors"></el-progress>
-                                        <el-progress style="margin-bottom: 12px;" :percentage="perOrder" :format="formatOrder"
-                                                     :color="colors"></el-progress>
-                                        <el-progress style="margin-bottom: 12px;" :percentage="perCase" :format="formatCase"
-                                                     :color="colors"></el-progress>
-                                    </div>
-                                    <!--                                    <p style="color: black;font-size: 20px;">{{ this.custDetailInfo["faren"] }}</p>-->
-<!--                                    <p>{{ this.custDetailInfo["key"] }}</p>-->
-<!--                                    <p>{{ this.custDetailInfo["zihao"] }}</p>-->
-<!--                                    <p>{{ this.custDetailInfo["saleaddr"] }}</p>-->
-                                    <!--                                    <p>{{ this.custDetailInfo["idNum"] }}</p>-->
-                                    <!--                                    <p>{{ this.custDetailInfo["district"] }}</p>-->
-                                </div>
+<!--                                <div style="margin-left: 20px;margin-right: 2px;">-->
+<!--                                    <div>-->
+<!--                                        <el-progress  style="margin-bottom: 12px;" :percentage="perClue" :format="formatClue"-->
+<!--                                                     :color="colors"></el-progress>-->
+<!--                                        <el-progress style="margin-bottom: 12px;" :percentage="perRelationship" :format="formatRelationship"-->
+<!--                                                     :color="colors"></el-progress>-->
+<!--                                        <el-progress style="margin-bottom: 12px;" :percentage="perOrder" :format="formatOrder"-->
+<!--                                                     :color="colors"></el-progress>-->
+<!--                                        <el-progress style="margin-bottom: 12px;" :percentage="perCase" :format="formatCase"-->
+<!--                                                     :color="colors"></el-progress>-->
+<!--                                    </div>-->
+<!--                                </div>-->
                             </el-card>
                         </div>
 
@@ -208,7 +201,7 @@
                 perRelationship: 12,
                 perOrder: 23,
                 perCase: 54,
-                perTotal: 62,
+                // perTotal: null,
                 // dict = {
                 //     "key": cust.cust_key,
                 //     "zihao": cust.cust_zihao,
@@ -237,6 +230,14 @@
 
         },
         computed: {
+            perTotal() {
+                var per = 10
+                if (this.seeDetail) {
+                    per = Math.floor(Math.random() * 60)
+                    return per
+                }
+                return per
+            },
             custTable() {
                 console.log("计算");
                 const peopleSearch = this.peopleSearch;

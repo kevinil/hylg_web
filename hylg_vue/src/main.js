@@ -10,6 +10,7 @@ Vue.prototype.GLOBAL = global_//挂载到Vue实例上面
 // import VueAxios from 'vue-axios'
 
 axios.defaults.baseURL = 'http://10.89.124.47:8000'
+// axios.defaults.baseURL = 'http://localhost:8000'
 Vue.prototype.$axios = axios
 
 // Vue.use(VueAxios, axios)
@@ -18,6 +19,11 @@ Vue.config.productionTip = false
 new Vue({
     el: "#app",
     router,
+    data: function(){
+        return {
+            USERNAME: '',
+        }
+    },
     render: h => h(App),
 })
 

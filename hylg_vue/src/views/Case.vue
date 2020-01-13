@@ -34,70 +34,70 @@
                             </el-row>
                         </div>
 
-                        <el-tabs  type="border-card" style="float: left;margin-left: 20px;width: 850px;">
-                            <el-tab-pane >
-                               <span slot="label"><i class="el-icon-refresh"></i> 实时分析</span>
-                                <el-row :gutter="20" >
-                                    <el-col :span="6" v-for="tab in tables" :key="tab.title">
-                                        <el-card :body-style="{ padding: '0px' }">
-                                            <div style="padding: 14px;">
-<!--                                                <span class="four-tag">{{ tab.title }}</span>-->
-                                                <el-tag>{{ tab.title }}</el-tag>
-                                                <el-table
-                                                        style="margin-top: 10px;"
-                                                        :data="tab.data"
-                                                        :show-header="tableHeaderStatus"
-                                                        :highlight-current-row="highlightStatus">
-                                                    <el-table-column
-                                                            prop="customer"
-                                                            label="客户"
-                                                            width="100xp;">
-                                                        <template slot-scope="scope">
-                                                            <h3 style="color: #475669;opacity: 0.75;font-size:25px;margin-left: -8px;">{{ scope.row.customer }}</h3>
-                                                        </template>
-                                                    </el-table-column>
-                                                    <el-table-column
-                                                            style="height: 40px;"
-                                                            prop="value"
-                                                            label="风险值"
-                                                            width="55xp;">
-                                                        <template slot-scope="scope">
-                                                            <h3 :style=colorSelect(parseInt(scope.row.value))>{{ scope.row.value }}</h3>
-                                                        </template>
-                                                    </el-table-column>
+<!--                        <el-tabs  type="border-card" style="float: left;margin-left: 20px;width: 850px;">-->
+<!--                            <el-tab-pane >-->
+<!--                               <span slot="label"><i class="el-icon-refresh"></i> 实时分析</span>-->
+<!--                                <el-row :gutter="20" >-->
+<!--                                    <el-col :span="6" v-for="tab in tables" :key="tab.title">-->
+<!--                                        <el-card :body-style="{ padding: '0px' }">-->
+<!--                                            <div style="padding: 14px;">-->
+<!--&lt;!&ndash;                                                <span class="four-tag">{{ tab.title }}</span>&ndash;&gt;-->
+<!--                                                <el-tag>{{ tab.title }}</el-tag>-->
+<!--                                                <el-table-->
+<!--                                                        style="margin-top: 10px;"-->
+<!--                                                        :data="tab.data"-->
+<!--                                                        :show-header="tableHeaderStatus"-->
+<!--                                                        :highlight-current-row="highlightStatus">-->
+<!--                                                    <el-table-column-->
+<!--                                                            prop="customer"-->
+<!--                                                            label="客户"-->
+<!--                                                            width="100xp;">-->
+<!--                                                        <template slot-scope="scope">-->
+<!--                                                            <h3 style="color: #475669;opacity: 0.75;font-size:25px;margin-left: -8px;">{{ scope.row.customer }}</h3>-->
+<!--                                                        </template>-->
+<!--                                                    </el-table-column>-->
+<!--                                                    <el-table-column-->
+<!--                                                            style="height: 40px;"-->
+<!--                                                            prop="value"-->
+<!--                                                            label="风险值"-->
+<!--                                                            width="55xp;">-->
+<!--                                                        <template slot-scope="scope">-->
+<!--                                                            <h3 :style=colorSelect(parseInt(scope.row.value))>{{ scope.row.value }}</h3>-->
+<!--                                                        </template>-->
+<!--                                                    </el-table-column>-->
 
-                                                </el-table>
-                                            </div>
-                                        </el-card>
-                                    </el-col>
-                                </el-row>
-                            </el-tab-pane>
-                            <el-tab-pane>
-                                <span slot="label"><i class="el-icon-date"></i> 预警历史</span>
-                                <el-table
-                                        :data="tableYujing"
-                                        :show-header="tableHeaderStatus"
-                                        :highlight-current-row="highlightStatus">
-                                    <el-table-column
-                                            prop="customer"
-                                            label="客户"
-                                            width="200xp;">
-                                    </el-table-column>
-                                    <el-table-column
-                                            prop="value"
-                                            label="风险值"
-                                            width="200xp;">
-                                    </el-table-column>
-                                    <el-table-column
-                                            prop="date"
-                                            label="日期"
-                                            width="370xp;">
-                                    </el-table-column>
+<!--                                                </el-table>-->
+<!--                                            </div>-->
+<!--                                        </el-card>-->
+<!--                                    </el-col>-->
+<!--                                </el-row>-->
+<!--                            </el-tab-pane>-->
+<!--                            <el-tab-pane>-->
+<!--                                <span slot="label"><i class="el-icon-date"></i> 预警历史</span>-->
+<!--                                <el-table-->
+<!--                                        :data="tableYujing"-->
+<!--                                        :show-header="tableHeaderStatus"-->
+<!--                                        :highlight-current-row="highlightStatus">-->
+<!--                                    <el-table-column-->
+<!--                                            prop="customer"-->
+<!--                                            label="客户"-->
+<!--                                            width="200xp;">-->
+<!--                                    </el-table-column>-->
+<!--                                    <el-table-column-->
+<!--                                            prop="value"-->
+<!--                                            label="风险值"-->
+<!--                                            width="200xp;">-->
+<!--                                    </el-table-column>-->
+<!--                                    <el-table-column-->
+<!--                                            prop="date"-->
+<!--                                            label="日期"-->
+<!--                                            width="370xp;">-->
+<!--                                    </el-table-column>-->
 
-                                </el-table>
-                            </el-tab-pane>
-                            <el-tab-pane label="查找区域">参数</el-tab-pane>
-                        </el-tabs>
+<!--                                </el-table>-->
+<!--                            </el-tab-pane>-->
+<!--                            <el-tab-pane label="查找区域">参数</el-tab-pane>-->
+<!--                        </el-tabs>-->
                     </div>
                 </transition>
             </div>
