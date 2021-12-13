@@ -30,7 +30,7 @@ jdcal==1.4.1
 jieba==0.39
 jsonpath==0.82
 kiwisolver==1.1.0
-lxml==4.3.3
+lxml==4.6.5
 matplotlib==3.1.1
 moviepy==0.2.3.2
 numpy==1.17.2
